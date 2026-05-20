@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import subprocess
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import urlopen
@@ -9,8 +10,11 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SITE_ROOT = ROOT.parent
 OUTPUT = ROOT / "assets" / "data-scope.gif"
 BADGE_CACHE = ROOT / "assets" / "badges"
+PATTERN_CACHE = ROOT / "assets" / "bg-pattern.png"
+SITE_PATTERN = SITE_ROOT / "static" / "img" / "bg-pattern.svg"
 
 WIDTH = 420
 HEIGHT = 220
@@ -28,6 +32,7 @@ RED = (232, 83, 70)
 CYAN = (120, 190, 210)
 WHITE = (230, 237, 243)
 MUTED = (125, 133, 144)
+CONTOUR_GOLD = (251, 191, 36)
 
 TOOLS = [
     {"slug": "python", "label": "Python", "color": "14354C", "logo": "python", "logo_color": "white"},
@@ -110,17 +115,115 @@ def load_badge(tool: dict[str, str]) -> Image.Image:
     return badge.resize(size, Image.Resampling.LANCZOS)
 
 
+def site_pattern_tile() -> Image.Image | None:
+    if not SITE_PATTERN.exists():
+        return None
+
+    if not PATTERN_CACHE.exists():
+        try:
+            subprocess.run(
+                [
+                    "rsvg-convert",
+                    "--width",
+                    "600",
+                    "--height",
+                    "600",
+                    "--output",
+                    str(PATTERN_CACHE),
+                    str(SITE_PATTERN),
+                ],
+                check=True,
+            )
+        except (FileNotFoundError, subprocess.CalledProcessError):
+            return None
+
+    return Image.open(PATTERN_CACHE).convert("RGBA")
+
+
+def densest_pattern_crop(tile: Image.Image) -> Image.Image:
+    alpha = tile.getchannel("A")
+    best_score = -1
+    best_box = (0, 0, WIDTH, HEIGHT)
+
+    max_x = max(0, tile.width - WIDTH)
+    max_y = max(0, tile.height - HEIGHT)
+    for y in range(0, max_y + 1, 24):
+        for x in range(0, max_x + 1, 24):
+            crop_alpha = alpha.crop((x, y, x + WIDTH, y + HEIGHT))
+            score = sum(crop_alpha.get_flattened_data())
+            if score > best_score:
+                best_score = score
+                best_box = (x, y, x + WIDTH, y + HEIGHT)
+
+    return tile.crop(best_box)
+
+
+def draw_soft_contours(image: Image.Image) -> None:
+    scale = 4
+    large = Image.new("RGBA", (WIDTH * scale, HEIGHT * scale), (11, 18, 14, 255))
+    draw = ImageDraw.Draw(large)
+
+    def s(value: float) -> int:
+        return int(value * scale)
+
+    contour_color = (78, 91, 42, 150)
+    highlight_color = (111, 96, 44, 110)
+
+    islands = [
+        (-18, 34, 150, 58, 0.35),
+        (356, 44, 166, 64, 1.2),
+        (52, 176, 176, 58, 2.0),
+        (348, 176, 140, 46, 2.8),
+    ]
+    for cx0, cy0, rx, ry, phase in islands:
+        for step in range(6):
+            rxf = rx - step * 16
+            ryf = ry - step * 7
+            if rxf <= 0 or ryf <= 0:
+                continue
+            points = []
+            for degree in range(0, 361, 5):
+                angle = math.radians(degree)
+                wobble = 1 + math.sin(angle * 2.4 + phase) * 0.045 + math.cos(angle * 4.8 - phase) * 0.025
+                points.append((s(cx0 + math.cos(angle) * rxf * wobble), s(cy0 + math.sin(angle) * ryf * wobble)))
+            draw.line(points, fill=contour_color if step % 2 else highlight_color, width=s(1.2))
+
+    for band, base_y in enumerate(range(-10, HEIGHT + 35, 34)):
+        points = []
+        phase = band * 0.7
+        for x in range(-30, WIDTH + 31, 8):
+            y = base_y + math.sin(x * 0.025 + phase) * 5 + math.cos(x * 0.053 - phase) * 2
+            points.append((s(x), s(y)))
+        draw.line(points, fill=(56, 70, 42, 90), width=s(0.9))
+
+    large = large.filter(ImageFilter.GaussianBlur(s(0.15)))
+    image.alpha_composite(large.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS))
+
+
+def draw_site_background(image: Image.Image) -> None:
+    image.paste((11, 18, 14, 255), (0, 0, WIDTH, HEIGHT))
+
+    tile = site_pattern_tile()
+    if tile is None:
+        draw_soft_contours(image)
+        return
+
+    # Use the actual website contour asset as a subdued texture, not foreground art.
+    crop = densest_pattern_crop(tile)
+    crop = crop.filter(ImageFilter.GaussianBlur(0.2))
+
+    # The SVG has 8% opacity baked in. Boost it for the tiny GIF, but cap it so
+    # the sight and badges remain the subject.
+    alpha = crop.getchannel("A").point(lambda value: min(92, int(value * 4.25)))
+    crop.putalpha(alpha)
+    image.alpha_composite(crop)
+
+
 def make_frame(index: int) -> Image.Image:
     image = Image.new("RGBA", (WIDTH, HEIGHT), BG + (255,))
     draw = ImageDraw.Draw(image)
 
-    # Weathered target-board background, dark enough to stay README-friendly.
-    for y in range(0, HEIGHT, 18):
-        shade = 24 + (y // 18 % 2) * 6
-        draw.rectangle((0, y, WIDTH, y + 17), fill=(shade, shade + 5, shade + 7, 255))
-        draw.line((0, y, WIDTH, y), fill=(70, 76, 78, 90), width=1)
-    for x in range(-40, WIDTH, 95):
-        draw.line((x, 0, x + 90, HEIGHT), fill=(255, 255, 255, 18), width=1)
+    draw_site_background(image)
 
     cx, cy = WIDTH // 2, 108
     outer_r = 86
