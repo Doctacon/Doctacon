@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/avatar.png" width="90" alt="Connor Lough avatar">
+  <img src="assets/data-scope.gif" width="420" alt="Animated archery sight cycling through data tool targets">
 </p>
 
 <h1 align="center">Lough on Data</h1>
