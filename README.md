@@ -2,8 +2,6 @@
   <img src="assets/data-scope.gif" width="420" alt="Animated archery sight cycling through data tool targets">
 </p>
 
-<h1 align="center">Lough on Data</h1>
-
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=6AA84F&center=true&vCenter=true&width=760&lines=Data+engineering+%E2%80%A2+Geospatial+systems+%E2%80%A2+AI+tooling;Pipelines+that+make+work+quieter;Field+notes+from+the+modern+data+stack" alt="Typing headline">
 </p>
