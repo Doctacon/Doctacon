@@ -32,13 +32,11 @@ MUTED = (125, 133, 144)
 TOOLS = [
     {"slug": "python", "label": "Python", "color": "14354C", "logo": "python", "logo_color": "white"},
     {"slug": "duckdb", "label": "DuckDB", "color": "FFF000", "logo": "duckdb", "logo_color": "black"},
-    {"slug": "motherduck", "label": "MotherDuck", "color": "FFCC33", "logo": "duckdb", "logo_color": "black"},
     {"slug": "dlt", "label": "dlt", "color": "11A683", "logo": "python", "logo_color": "white"},
     {"slug": "sqlmesh", "label": "SQLMesh", "color": "2E3440", "logo": "sqlite", "logo_color": "white"},
     {"slug": "dagster", "label": "Dagster", "color": "654FF0", "logo": "dagster", "logo_color": "white"},
     {"slug": "geopandas", "label": "GeoPandas", "color": "139C5A", "logo": "pandas", "logo_color": "white"},
     {"slug": "pytorch", "label": "PyTorch", "color": "EE4C2C", "logo": "pytorch", "logo_color": "white"},
-    {"slug": "osm", "label": "OpenStreetMap", "color": "7EBC6F", "logo": "openstreetmap", "logo_color": "white"},
 ]
 
 
