@@ -15,7 +15,7 @@ BADGE_CACHE = ROOT / "assets" / "badges"
 WIDTH = 420
 HEIGHT = 220
 FRAMES = 126
-DURATION_MS = 55
+DURATION_MS = 110
 
 BG = (13, 17, 23)
 RING_DARK = (18, 24, 30)
@@ -56,6 +56,7 @@ def font(size: int, bold: bool = False) -> ImageFont.ImageFont:
 
 
 FONT_SMALL = font(11)
+FONT_SMALL_BOLD = font(11, bold=True)
 FONT_LABEL = font(16, bold=True)
 FONT_TINY = font(9, bold=True)
 
@@ -193,8 +194,7 @@ def make_frame(index: int) -> Image.Image:
     shine_draw.arc((cx - 72, cy - 72, cx + 72, cy + 72), 205, 330, fill=(255, 255, 255, 65), width=7)
     image.alpha_composite(shine)
 
-    draw.text((18, HEIGHT - 24), "DATA IN THE SIGHT PICTURE", fill=MUTED + (230,), font=FONT_TINY)
-    draw.text((WIDTH - 118, HEIGHT - 24), "Lough on Data", fill=GREEN + (230,), font=FONT_TINY)
+    draw.text((WIDTH - 122, HEIGHT - 24), "Lough on Data", fill=GREEN + (245,), font=FONT_SMALL_BOLD)
 
     return image.convert("P", palette=Image.ADAPTIVE)
 
