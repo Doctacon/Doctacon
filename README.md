@@ -36,7 +36,6 @@
         <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
         <img alt="SQL" src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
         <img alt="DuckDB" src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black">
-        <img alt="MotherDuck" src="https://img.shields.io/badge/MotherDuck-FFCC33?style=for-the-badge&logo=duckdb&logoColor=black">
         <img alt="dlt" src="https://img.shields.io/badge/dlt-11A683?style=for-the-badge&logo=python&logoColor=white">
         <img alt="SQLMesh" src="https://img.shields.io/badge/SQLMesh-2E3440?style=for-the-badge&logo=sqlite&logoColor=white">
         <img alt="Dagster" src="https://img.shields.io/badge/Dagster-654FF0?style=for-the-badge&logo=dagster&logoColor=white">
@@ -47,7 +46,6 @@
       <h3 align="center">Maps, Models, Agents</h3>
       <p align="center">
         <img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=pandas&logoColor=white">
-        <img alt="OpenStreetMap" src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white">
         <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
         <img alt="Hugo" src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white">
         <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
@@ -76,5 +74,5 @@
 </p>
 
 <p align="center">
-  <sub>Data involved in every step downstream of creation.</sub>
+  <sub>Data. Involved in every step downstream of creation.</sub>
 </p>
