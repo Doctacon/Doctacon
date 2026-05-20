@@ -14,7 +14,7 @@ BADGE_CACHE = ROOT / "assets" / "badges"
 
 WIDTH = 420
 HEIGHT = 220
-FRAMES = 72
+FRAMES = 126
 DURATION_MS = 55
 
 BG = (13, 17, 23)
@@ -104,8 +104,8 @@ def load_badge(tool: dict[str, str]) -> Image.Image:
             fallback_badge(tool, path)
 
     badge = Image.open(path).convert("RGBA")
-    max_width = 108
-    max_height = 28
+    max_width = 74
+    max_height = 20
     scale = min(max_width / badge.width, max_height / badge.height)
     size = (max(1, int(badge.width * scale)), max(1, int(badge.height * scale)))
     return badge.resize(size, Image.Resampling.LANCZOS)
@@ -149,19 +149,21 @@ def make_frame(index: int) -> Image.Image:
     mask_draw = ImageDraw.Draw(aperture_mask)
     mask_draw.ellipse((cx - inner_r + 3, cy - inner_r + 3, cx + inner_r - 3, cy + inner_r - 3), fill=255)
 
-    spacing = 112
-    offset = (index / FRAMES) * spacing
-    start_x = cx + inner_r + 25 - offset
+    spacing = 92
+    cycle_width = len(TOOLS) * spacing
+    phase = (index / FRAMES) * cycle_width
+    entry_x = cx + inner_r + 38
     y_mid = cy - 4
-    for item_index in range(len(TOOLS) + 3):
-        tool = TOOLS[item_index % len(TOOLS)]
+    for item_index, tool in enumerate(TOOLS):
         color = tuple(int(tool["color"][i : i + 2], 16) for i in (0, 2, 4))
         badge = load_badge(tool)
-        x = start_x - item_index * spacing
-        card = (x - 55, y_mid - 17, x + 55, y_mid + 17)
+        x = entry_x - ((phase + item_index * spacing) % cycle_width)
+        if x < cx - inner_r - 50:
+            x += cycle_width
+        card = (x - 40, y_mid - 13, x + 40, y_mid + 13)
         rounded_rect(target_draw, card, 9, (12, 16, 18, 225), color + (255,), 2)
         target_layer.alpha_composite(badge, (int(x - badge.width / 2), int(y_mid - badge.height / 2)))
-        target_draw.ellipse((x - 5, y_mid + 16, x + 5, y_mid + 26), fill=color + (240,))
+        target_draw.ellipse((x - 4, y_mid + 12, x + 4, y_mid + 20), fill=color + (240,))
 
     image.alpha_composite(Image.composite(target_layer, Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0)), aperture_mask))
 
