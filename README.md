@@ -48,7 +48,6 @@
         <img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=pandas&logoColor=white">
         <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
         <img alt="Hugo" src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white">
-        <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
         <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
         <img alt="MCP" src="https://img.shields.io/badge/MCP-4B5563?style=for-the-badge&logo=anthropic&logoColor=white">
         <img alt="Semantic Search" src="https://img.shields.io/badge/Semantic_Search-6AA84F?style=for-the-badge&logo=opensearch&logoColor=white">
