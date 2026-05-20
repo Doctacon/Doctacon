@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import math
 from pathlib import Path
+from urllib.parse import quote
+from urllib.request import urlopen
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "data-scope.gif"
+BADGE_CACHE = ROOT / "assets" / "badges"
 
 WIDTH = 420
 HEIGHT = 220
@@ -27,14 +30,15 @@ WHITE = (230, 237, 243)
 MUTED = (125, 133, 144)
 
 TOOLS = [
-    ("DuckDB", (255, 224, 64)),
-    ("MotherDuck", (255, 196, 40)),
-    ("dlt", (32, 180, 130)),
-    ("SQLMesh", (92, 105, 128)),
-    ("Dagster", (111, 74, 235)),
-    ("GeoPandas", (25, 156, 90)),
-    ("PyTorch", (238, 76, 44)),
-    ("OSM", (126, 188, 111)),
+    {"slug": "python", "label": "Python", "color": "14354C", "logo": "python", "logo_color": "white"},
+    {"slug": "duckdb", "label": "DuckDB", "color": "FFF000", "logo": "duckdb", "logo_color": "black"},
+    {"slug": "motherduck", "label": "MotherDuck", "color": "FFCC33", "logo": "duckdb", "logo_color": "black"},
+    {"slug": "dlt", "label": "dlt", "color": "11A683", "logo": "python", "logo_color": "white"},
+    {"slug": "sqlmesh", "label": "SQLMesh", "color": "2E3440", "logo": "sqlite", "logo_color": "white"},
+    {"slug": "dagster", "label": "Dagster", "color": "654FF0", "logo": "dagster", "logo_color": "white"},
+    {"slug": "geopandas", "label": "GeoPandas", "color": "139C5A", "logo": "pandas", "logo_color": "white"},
+    {"slug": "pytorch", "label": "PyTorch", "color": "EE4C2C", "logo": "pytorch", "logo_color": "white"},
+    {"slug": "osm", "label": "OpenStreetMap", "color": "7EBC6F", "logo": "openstreetmap", "logo_color": "white"},
 ]
 
 
@@ -65,6 +69,46 @@ def text_center(draw: ImageDraw.ImageDraw, xy, text: str, fill, font_obj):
     x = xy[0] - (bbox[2] - bbox[0]) / 2
     y = xy[1] - (bbox[3] - bbox[1]) / 2
     draw.text((x, y), text, fill=fill, font=font_obj)
+
+
+def badge_url(tool: dict[str, str]) -> str:
+    label = quote(tool["label"].replace("-", "--"), safe="")
+    color = tool["color"]
+    logo = quote(tool["logo"], safe="")
+    logo_color = quote(tool["logo_color"], safe="")
+    return (
+        f"https://img.shields.io/badge/{label}-{color}.png"
+        f"?style=flat-square&logo={logo}&logoColor={logo_color}"
+    )
+
+
+def fallback_badge(tool: dict[str, str], path: Path) -> None:
+    color = tuple(int(tool["color"][i : i + 2], 16) for i in (0, 2, 4))
+    image = Image.new("RGBA", (106, 26), (12, 16, 18, 0))
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((0, 0, 105, 25), radius=4, fill=(20, 24, 28, 255), outline=color + (255,), width=1)
+    draw.rectangle((0, 0, 27, 25), fill=color + (255,))
+    text_center(draw, (13, 13), tool["label"][:1].upper(), (255, 255, 255, 255), FONT_TINY)
+    text_center(draw, (66, 13), tool["label"], WHITE + (255,), FONT_SMALL)
+    image.save(path)
+
+
+def load_badge(tool: dict[str, str]) -> Image.Image:
+    BADGE_CACHE.mkdir(parents=True, exist_ok=True)
+    path = BADGE_CACHE / f"{tool['slug']}.png"
+    if not path.exists():
+        try:
+            with urlopen(badge_url(tool), timeout=20) as response:
+                path.write_bytes(response.read())
+        except Exception:
+            fallback_badge(tool, path)
+
+    badge = Image.open(path).convert("RGBA")
+    max_width = 108
+    max_height = 28
+    scale = min(max_width / badge.width, max_height / badge.height)
+    size = (max(1, int(badge.width * scale)), max(1, int(badge.height * scale)))
+    return badge.resize(size, Image.Resampling.LANCZOS)
 
 
 def make_frame(index: int) -> Image.Image:
@@ -110,19 +154,20 @@ def make_frame(index: int) -> Image.Image:
     start_x = cx + inner_r + 25 - offset
     y_mid = cy - 4
     for item_index in range(len(TOOLS) + 3):
-        name, color = TOOLS[item_index % len(TOOLS)]
+        tool = TOOLS[item_index % len(TOOLS)]
+        color = tuple(int(tool["color"][i : i + 2], 16) for i in (0, 2, 4))
+        badge = load_badge(tool)
         x = start_x - item_index * spacing
-        card = (x - 44, y_mid - 18, x + 44, y_mid + 18)
+        card = (x - 55, y_mid - 17, x + 55, y_mid + 17)
         rounded_rect(target_draw, card, 9, (12, 16, 18, 225), color + (255,), 2)
-        target_draw.rectangle((x - 44, y_mid + 10, x + 44, y_mid + 18), fill=color + (230,))
-        text_center(target_draw, (x, y_mid - 2), name, WHITE + (255,), FONT_SMALL)
+        target_layer.alpha_composite(badge, (int(x - badge.width / 2), int(y_mid - badge.height / 2)))
         target_draw.ellipse((x - 5, y_mid + 16, x + 5, y_mid + 26), fill=color + (240,))
 
     image.alpha_composite(Image.composite(target_layer, Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0)), aperture_mask))
 
-    # Archery sight pins: horizontal fibers from the right with glowing colored pins.
-    pin_origin_x = cx + 48
-    for dy, color in [(-18, AMBER), (-6, RED), (7, SOFT_GREEN), (20, CYAN)]:
+    # Archery sight pins: fibers attach to the right side of the sight ring.
+    for dy, color in [(-16, AMBER), (0, RED), (16, AMBER)]:
+        pin_origin_x = cx + math.sqrt((inner_r - 5) ** 2 - dy**2)
         draw.line((pin_origin_x, cy + dy, cx + 4, cy + dy), fill=(5, 8, 10, 255), width=4)
         draw.line((pin_origin_x, cy + dy, cx + 7, cy + dy), fill=color + (170,), width=1)
         glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
