@@ -1,1 +1,112 @@
-# Lough on Data
+<p align="center">
+  <img src="assets/avatar.png" width="180" alt="Connor Lough avatar">
+</p>
+
+<h1 align="center">Lough on Data</h1>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=6AA84F&center=true&vCenter=true&width=760&lines=Data+engineering+%E2%80%A2+Geospatial+systems+%E2%80%A2+AI+tooling;Pipelines+that+make+work+quieter;Field+notes+from+the+modern+data+stack" alt="Typing headline">
+</p>
+
+<p align="center">
+  <a href="https://loughondata.com"><img alt="Website" src="https://img.shields.io/badge/loughondata.com-2F5D50?style=for-the-badge&logo=hugo&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/crlough/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="mailto:connor@loughondata.com"><img alt="Email" src="https://img.shields.io/badge/Email-6AA84F?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="https://github.com/Doctacon"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
+</p>
+
+<h3 align="center">Current Coordinates</h3>
+
+<p align="center">
+  <img alt="Data Engineering" src="https://img.shields.io/badge/Data_Engineering-1F6F5B?style=flat-square">
+  <img alt="Geospatial" src="https://img.shields.io/badge/Geospatial-3A7D44?style=flat-square">
+  <img alt="Analytics Engineering" src="https://img.shields.io/badge/Analytics_Engineering-4F7942?style=flat-square">
+  <img alt="AI Agents" src="https://img.shields.io/badge/AI_Agents-5B8C5A?style=flat-square">
+  <img alt="Local-first Tools" src="https://img.shields.io/badge/Local--first_Tools-6AA84F?style=flat-square">
+  <img alt="Public Land Data" src="https://img.shields.io/badge/Public_Land_Data-8FBC8F?style=flat-square">
+</p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">Data Stack</h3>
+      <p align="center">
+        <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
+        <img alt="SQL" src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
+        <img alt="DuckDB" src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black">
+        <img alt="MotherDuck" src="https://img.shields.io/badge/MotherDuck-FFCC33?style=for-the-badge&logo=duckdb&logoColor=black">
+        <img alt="dlt" src="https://img.shields.io/badge/dlt-11A683?style=for-the-badge&logo=python&logoColor=white">
+        <img alt="SQLMesh" src="https://img.shields.io/badge/SQLMesh-2E3440?style=for-the-badge&logo=sqlite&logoColor=white">
+        <img alt="Dagster" src="https://img.shields.io/badge/Dagster-654FF0?style=for-the-badge&logo=dagster&logoColor=white">
+        <img alt="Cloudflare R2" src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">Maps, Models, Agents</h3>
+      <p align="center">
+        <img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=pandas&logoColor=white">
+        <img alt="OpenStreetMap" src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white">
+        <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
+        <img alt="Hugo" src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white">
+        <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
+        <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+        <img alt="MCP" src="https://img.shields.io/badge/MCP-4B5563?style=for-the-badge&logo=anthropic&logoColor=white">
+        <img alt="Semantic Search" src="https://img.shields.io/badge/Semantic_Search-6AA84F?style=for-the-badge&logo=opensearch&logoColor=white">
+      </p>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
+</p>
+
+<h3 align="center">Shipped / Shipping</h3>
+
+<p align="center">
+  <a href="https://github.com/Doctacon/geo-trail-cv"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=geo-trail-cv&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="geo-trail-cv"></a>
+  <a href="https://github.com/Doctacon/geospatial-role-radar"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=geospatial-role-radar&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="geospatial-role-radar"></a>
+  <a href="https://github.com/Doctacon/databox"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=databox&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="databox"></a>
+  <a href="https://github.com/Doctacon/mcp-worktree-workflows"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=mcp-worktree-workflows&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="mcp-worktree-workflows"></a>
+  <a href="https://github.com/Doctacon/loughondata"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=loughondata&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="loughondata"></a>
+  <a href="https://github.com/Doctacon/az-hp"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=az-hp&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="az-hp"></a>
+</p>
+
+<h3 align="center">Field Notes</h3>
+
+<p align="center">
+  <a href="https://loughondata.com/posts/getting-agents-to-use-the-damn-index/"><img alt="Getting Agents To Use The Damn Index" src="https://img.shields.io/badge/Getting_Agents_To_Use_The_Damn_Index-0D1117?style=for-the-badge&logo=github&logoColor=white&labelColor=6AA84F"></a>
+  <a href="https://loughondata.com/posts/local-data-stack-build/"><img alt="Local Data Stack" src="https://img.shields.io/badge/Local_Data_Stack-0D1117?style=for-the-badge&logo=duckdb&logoColor=white&labelColor=6AA84F"></a>
+  <a href="https://loughondata.com/posts/from-map-tiles-to-trail-masks/"><img alt="From Map Tiles To Trail Masks" src="https://img.shields.io/badge/From_Map_Tiles_To_Trail_Masks-0D1117?style=for-the-badge&logo=openstreetmap&logoColor=white&labelColor=6AA84F"></a>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api?username=Doctacon&show_icons=true&include_all_commits=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="GitHub stats">
+    </td>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Doctacon&layout=compact&langs_count=10&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9" alt="Top languages">
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Doctacon&theme=dark&hide_border=true&background=0D1117&ring=6AA84F&fire=8FBC8F&currStreakLabel=6AA84F" alt="GitHub streak">
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Doctacon&theme=github-compact&bg_color=0D1117&color=C9D1D9&line=6AA84F&point=8FBC8F&area=true&hide_border=true" alt="GitHub activity graph">
+</p>
+
+<p align="center">
+  <sub>Data involved in every step downstream of creation.</sub>
+</p>
