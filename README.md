@@ -2,6 +2,8 @@
   <img src="assets/data-scope.gif" width="420" alt="Animated archery sight cycling through data tool targets">
 </p>
 
+<h1 align="center">Lough on Data</h1>
+
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=6AA84F&center=true&vCenter=true&width=760&lines=Data+engineering+%E2%80%A2+Geospatial+systems+%E2%80%A2+AI+tooling;Pipelines+that+make+work+quieter;Field+notes+from+the+modern+data+stack" alt="Typing headline">
 </p>
@@ -36,6 +38,7 @@
         <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
         <img alt="SQL" src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
         <img alt="DuckDB" src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black">
+        <img alt="MotherDuck" src="https://img.shields.io/badge/MotherDuck-FFCC33?style=for-the-badge&logo=duckdb&logoColor=black">
         <img alt="dlt" src="https://img.shields.io/badge/dlt-11A683?style=for-the-badge&logo=python&logoColor=white">
         <img alt="SQLMesh" src="https://img.shields.io/badge/SQLMesh-2E3440?style=for-the-badge&logo=sqlite&logoColor=white">
         <img alt="Dagster" src="https://img.shields.io/badge/Dagster-654FF0?style=for-the-badge&logo=dagster&logoColor=white">
@@ -46,8 +49,10 @@
       <h3 align="center">Maps, Models, Agents</h3>
       <p align="center">
         <img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=pandas&logoColor=white">
+        <img alt="OpenStreetMap" src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white">
         <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
         <img alt="Hugo" src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white">
+        <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
         <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
         <img alt="MCP" src="https://img.shields.io/badge/MCP-4B5563?style=for-the-badge&logo=anthropic&logoColor=white">
         <img alt="Semantic Search" src="https://img.shields.io/badge/Semantic_Search-6AA84F?style=for-the-badge&logo=opensearch&logoColor=white">
@@ -73,5 +78,5 @@
 </p>
 
 <p align="center">
-  <sub>Data. Involved in every step downstream of creation.</sub>
+  <sub>Data involved in every step downstream of creation.</sub>
 </p>

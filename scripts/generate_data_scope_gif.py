@@ -35,13 +35,46 @@ MUTED = (125, 133, 144)
 CONTOUR_GOLD = (251, 191, 36)
 
 TOOLS = [
-    {"slug": "python", "label": "Python", "color": "14354C", "logo": "python", "logo_color": "white"},
-    {"slug": "duckdb", "label": "DuckDB", "color": "FFF000", "logo": "duckdb", "logo_color": "black"},
-    {"slug": "dlt", "label": "dlt", "color": "11A683", "logo": "python", "logo_color": "white"},
-    {"slug": "sqlmesh", "label": "SQLMesh", "color": "2E3440", "logo": "sqlite", "logo_color": "white"},
-    {"slug": "dagster", "label": "Dagster", "color": "654FF0", "logo": "dagster", "logo_color": "white"},
-    {"slug": "geopandas", "label": "GeoPandas", "color": "139C5A", "logo": "pandas", "logo_color": "white"},
-    {"slug": "pytorch", "label": "PyTorch", "color": "EE4C2C", "logo": "pytorch", "logo_color": "white"},
+    {
+        "slug": "python",
+        "label": "Python",
+        "color": "3776AB",
+        "logo": "python",
+        "logo_color": "white",
+        "image": "assets/python.png",
+    },
+    {
+        "slug": "duckdb",
+        "label": "DuckDB",
+        "color": "FFF000",
+        "logo": "duckdb",
+        "logo_color": "black",
+        "image": "assets/duckdb.png",
+    },
+    {
+        "slug": "snowflake",
+        "label": "Snowflake",
+        "color": "29B5E8",
+        "logo": "snowflake",
+        "logo_color": "white",
+        "image": "assets/snowflake.png",
+    },
+    {
+        "slug": "dbt",
+        "label": "dbt",
+        "color": "FF694B",
+        "logo": "dbt",
+        "logo_color": "white",
+        "image": "assets/dbt.png",
+    },
+    {
+        "slug": "dagster",
+        "label": "Dagster",
+        "color": "654FF0",
+        "logo": "dagster",
+        "logo_color": "white",
+        "image": "assets/dagster.png",
+    },
 ]
 
 
@@ -113,6 +146,22 @@ def load_badge(tool: dict[str, str]) -> Image.Image:
     scale = min(max_width / badge.width, max_height / badge.height)
     size = (max(1, int(badge.width * scale)), max(1, int(badge.height * scale)))
     return badge.resize(size, Image.Resampling.LANCZOS)
+
+
+def load_target_image(tool: dict[str, str]) -> Image.Image | None:
+    image_path = tool.get("image")
+    if not image_path:
+        return None
+
+    path = ROOT / image_path
+    if not path.exists():
+        return None
+
+    logo = Image.open(path).convert("RGBA")
+    logo.thumbnail((46, 46), Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", (56, 56), (0, 0, 0, 0))
+    canvas.alpha_composite(logo, ((canvas.width - logo.width) // 2, (canvas.height - logo.height) // 2))
+    return canvas
 
 
 def site_pattern_tile() -> Image.Image | None:
@@ -258,14 +307,18 @@ def make_frame(index: int) -> Image.Image:
     y_mid = cy - 4
     for item_index, tool in enumerate(TOOLS):
         color = tuple(int(tool["color"][i : i + 2], 16) for i in (0, 2, 4))
-        badge = load_badge(tool)
+        logo = load_target_image(tool)
+        badge = None if logo is not None else load_badge(tool)
         x = entry_x - ((phase + item_index * spacing) % cycle_width)
         if x < cx - inner_r - 50:
             x += cycle_width
-        card = (x - 40, y_mid - 13, x + 40, y_mid + 13)
-        rounded_rect(target_draw, card, 9, (12, 16, 18, 225), color + (255,), 2)
-        target_layer.alpha_composite(badge, (int(x - badge.width / 2), int(y_mid - badge.height / 2)))
-        target_draw.ellipse((x - 4, y_mid + 12, x + 4, y_mid + 20), fill=color + (240,))
+        if logo is not None:
+            target_layer.alpha_composite(logo, (int(x - logo.width / 2), int(y_mid - logo.height / 2)))
+        else:
+            card = (x - 40, y_mid - 13, x + 40, y_mid + 13)
+            rounded_rect(target_draw, card, 9, (12, 16, 18, 225), color + (255,), 2)
+            target_layer.alpha_composite(badge, (int(x - badge.width / 2), int(y_mid - badge.height / 2)))
+            target_draw.ellipse((x - 4, y_mid + 12, x + 4, y_mid + 20), fill=color + (240,))
 
     image.alpha_composite(Image.composite(target_layer, Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0)), aperture_mask))
 
