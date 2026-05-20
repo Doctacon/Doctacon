@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/avatar.png" width="180" alt="Connor Lough avatar">
+  <img src="assets/avatar.png" width="90" alt="Connor Lough avatar">
 </p>
 
 <h1 align="center">Lough on Data</h1>
@@ -65,17 +65,6 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
 </p>
 
-<h3 align="center">Shipped / Shipping</h3>
-
-<p align="center">
-  <a href="https://github.com/Doctacon/geo-trail-cv"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=geo-trail-cv&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="geo-trail-cv"></a>
-  <a href="https://github.com/Doctacon/geospatial-role-radar"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=geospatial-role-radar&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="geospatial-role-radar"></a>
-  <a href="https://github.com/Doctacon/databox"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=databox&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="databox"></a>
-  <a href="https://github.com/Doctacon/mcp-worktree-workflows"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=mcp-worktree-workflows&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="mcp-worktree-workflows"></a>
-  <a href="https://github.com/Doctacon/loughondata"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=loughondata&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="loughondata"></a>
-  <a href="https://github.com/Doctacon/az-hp"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Doctacon&repo=az-hp&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="az-hp"></a>
-</p>
-
 <h3 align="center">Field Notes</h3>
 
 <p align="center">
@@ -86,25 +75,6 @@
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
-</p>
-
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=Doctacon&show_icons=true&include_all_commits=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9&icon_color=8FBC8F" alt="GitHub stats">
-    </td>
-    <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Doctacon&layout=compact&langs_count=10&theme=dark&hide_border=true&bg_color=0D1117&title_color=6AA84F&text_color=C9D1D9" alt="Top languages">
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=Doctacon&theme=dark&hide_border=true&background=0D1117&ring=6AA84F&fire=8FBC8F&currStreakLabel=6AA84F" alt="GitHub streak">
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Doctacon&theme=github-compact&bg_color=0D1117&color=C9D1D9&line=6AA84F&point=8FBC8F&area=true&hide_border=true" alt="GitHub activity graph">
 </p>
 
 <p align="center">
