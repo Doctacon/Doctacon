@@ -20,23 +20,17 @@
 </p>
 
 <h3 align="center">Data Stack</h3>
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">Data Stack</h3>
-      <p align="center">
-        <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
-        <img alt="SQL" src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
-        <img alt="DuckDB" src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black">
-        <img alt="MotherDuck" src="https://img.shields.io/badge/MotherDuck-FFCC33?style=for-the-badge&logo=duckdb&logoColor=black">
-        <img alt="dlt" src="https://img.shields.io/badge/dlt-11A683?style=for-the-badge&logo=python&logoColor=white">
-        <img alt="SQLMesh" src="https://img.shields.io/badge/SQLMesh-2E3440?style=for-the-badge&logo=sqlite&logoColor=white">
-        <img alt="Dagster" src="https://img.shields.io/badge/Dagster-654FF0?style=for-the-badge&logo=dagster&logoColor=white">
-        <img alt="Cloudflare R2" src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
-      </p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="SQL" src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img alt="DuckDB" src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black">
+  <img alt="MotherDuck" src="https://img.shields.io/badge/MotherDuck-FFCC33?style=for-the-badge&logo=duckdb&logoColor=black">
+  <img alt="dlt" src="https://img.shields.io/badge/dlt-11A683?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="SQLMesh" src="https://img.shields.io/badge/SQLMesh-2E3440?style=for-the-badge&logo=sqlite&logoColor=white">
+  <img alt="Dagster" src="https://img.shields.io/badge/Dagster-654FF0?style=for-the-badge&logo=dagster&logoColor=white">
+  <img alt="Cloudflare R2" src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
+</p>    
+
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
