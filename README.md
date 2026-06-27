@@ -19,8 +19,6 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=6AA84F" width="100%" alt="divider">
 </p>
 
-<h3 align="center">Current Coordinates</h3>
-
 <table>
   <tr>
     <td width="50%" valign="top">
