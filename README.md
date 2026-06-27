@@ -45,19 +45,6 @@
         <img alt="Cloudflare R2" src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white">
       </p>
     </td>
-    <td width="50%" valign="top">
-      <h3 align="center">Maps, Models, Agents</h3>
-      <p align="center">
-        <img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=pandas&logoColor=white">
-        <img alt="OpenStreetMap" src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white">
-        <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
-        <img alt="Hugo" src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white">
-        <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white">
-        <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-        <img alt="MCP" src="https://img.shields.io/badge/MCP-4B5563?style=for-the-badge&logo=anthropic&logoColor=white">
-        <img alt="Semantic Search" src="https://img.shields.io/badge/Semantic_Search-6AA84F?style=for-the-badge&logo=opensearch&logoColor=white">
-      </p>
-    </td>
   </tr>
 </table>
 
