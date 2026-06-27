@@ -21,15 +21,6 @@
 
 <h3 align="center">Current Coordinates</h3>
 
-<p align="center">
-  <img alt="Data Engineering" src="https://img.shields.io/badge/Data_Engineering-1F6F5B?style=flat-square">
-  <img alt="Geospatial" src="https://img.shields.io/badge/Geospatial-3A7D44?style=flat-square">
-  <img alt="Analytics Engineering" src="https://img.shields.io/badge/Analytics_Engineering-4F7942?style=flat-square">
-  <img alt="AI Agents" src="https://img.shields.io/badge/AI_Agents-5B8C5A?style=flat-square">
-  <img alt="Local-first Tools" src="https://img.shields.io/badge/Local--first_Tools-6AA84F?style=flat-square">
-  <img alt="Public Land Data" src="https://img.shields.io/badge/Public_Land_Data-8FBC8F?style=flat-square">
-</p>
-
 <table>
   <tr>
     <td width="50%" valign="top">
