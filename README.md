@@ -20,5 +20,5 @@
 </p>
 
 <p align="center">
-  <sub>Data involved in every step downstream of creation.</sub>
+  <sub>Data, involved in every step downstream of creation.</sub>
 </p>
